@@ -25,15 +25,17 @@ app.post("/payment-service", async (req, res) => {
   const { cart } = req.body;
   const userId = "123";
 
-  // console.log(req.body, "Check req"); // undefined
-
   // KAFKA
   await producer.send({
     topic: "payment-service",
     messages: [{ value: JSON.stringify({ userId, cart }) }],
   });
 
-  return res.status(200).send("Payment successful");
+  setTimeout(() => {
+    return res.status(200).send("Payment successful");
+  }, 3000);
+
+  // return res.status(200).send("Payment successful");
 });
 
 const connectkafka = async () => {
