@@ -6,7 +6,7 @@ const kafkaServer = new Kafka({
   brokers: ["localhost:9092"],
 });
 
-const admin = Kafka.admin();
+const admin = kafkaServer.admin();
 
 const run = async () => {
   await admin.connect();
