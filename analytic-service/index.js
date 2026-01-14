@@ -45,6 +45,8 @@ const run = async () => {
         console.log(`Analytic consumer: User ${userId} price: ${total}`);
       },
     });
+
+    console.log(`analytic service connected successfully`)
   } catch (error) {}
 };
 

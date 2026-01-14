@@ -27,7 +27,7 @@ const connectKafka = async () => {
         console.log(cartData, "cartData from order-service");
       },
     });
-    console.log(`Order consumer: User `);
+    console.log(`Order connected successfully`);
   } catch (error) {
     console.log(error);
   }
